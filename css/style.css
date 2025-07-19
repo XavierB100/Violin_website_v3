@@ -49,7 +49,6 @@ a {
 img {
   max-width: 100%;
   height: auto;
-  display: block;
 }
 
 .container {
@@ -155,18 +154,12 @@ nav {
   text-align: center;
   color: var(--white);
   margin-top: 80px;
-  overflow: hidden;
-}
-
-.hero-image-container {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
 }
 
 .hero-image {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -227,6 +220,7 @@ nav {
 }
 
 .bio-image img {
+  display: block;
   transition: transform 0.3s ease;
 }
 
@@ -362,8 +356,7 @@ nav {
   margin-top: 40px;
 }
 
-.media-grid img, 
-.media-grid .video-container {
+.media-grid img {
   width: 100%;
   height: 300px;
   object-fit: cover;
@@ -371,21 +364,33 @@ nav {
   overflow: hidden;
   box-shadow: 0 3px 10px rgba(0,0,0,0.1);
   transition: all 0.3s ease;
-  position: relative;
 }
 
-.media-grid img:hover,
-.media-grid .video-container:hover {
+.media-grid img:hover {
   transform: scale(1.02);
   box-shadow: 0 5px 15px rgba(0,0,0,0.2);
 }
 
 .video-container {
   position: relative;
+  padding-bottom: 56.25%; /* 16:9 aspect ratio */
+  height: 0;
+  overflow: hidden;
   background: var(--black);
+  border-radius: 4px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+}
+
+.video-container:hover {
+  transform: scale(1.02);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
 }
 
 .video-container video {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -563,7 +568,7 @@ footer {
   justify-content: center;
   text-align: center;
   color: var(--white);
-  background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('../assets/IMG_0101.jpeg');
+  background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('../assets/IMG_0106.jpeg');
   background-size: cover;
   background-position: center;
 }
