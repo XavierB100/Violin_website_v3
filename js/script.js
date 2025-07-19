@@ -130,4 +130,17 @@ document.addEventListener('DOMContentLoaded', function() {
     lazyLoad();
     window.addEventListener('scroll', lazyLoad);
   }
+  
+  // Google Analytics tracking for outbound links
+  document.querySelectorAll('a[href^="http"]').forEach(link => {
+    if (link.hostname !== window.location.hostname) {
+      link.addEventListener('click', function(e) {
+        gtag('event', 'click', {
+          'event_category': 'Outbound Link',
+          'event_label': this.href,
+          'transport_type': 'beacon'
+        });
+      });
+    }
+  });
 });
