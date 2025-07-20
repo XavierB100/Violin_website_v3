@@ -32,6 +32,7 @@
         <h1>Book Your Event</h1>
         <p>Fill out the form below to check availability and pricing</p>
       </div>
+      <img src="assets/IMG_9263.jpeg" alt="Dorothe Blake performing" class="hero-background">
     </header>
 
     <section class="booking-info">
@@ -41,7 +42,7 @@
           <div class="info-card">
             <i class="fas fa-calendar-check"></i>
             <h3>1. Check Availability</h3>
-            <p>Use the calendar to see available dates and times for your event.</p>
+            <p>Use the form to see available dates and times for your event.</p>
           </div>
           <div class="info-card">
             <i class="fas fa-envelope"></i>
@@ -97,9 +98,35 @@
       <div class="container">
         <h2>Check Availability</h2>
         <div class="booking-container">
-          <!-- Calendly Embed -->
-          <div class="calendly-inline-widget" data-url="https://calendly.com/your-calendly-link" style="min-width:320px;height:700px;"></div>
-          <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+          <form id="booking-form">
+            <div class="form-group">
+              <label for="booking-name">Your Name</label>
+              <input type="text" id="booking-name" name="name" required>
+            </div>
+            <div class="form-group">
+              <label for="booking-email">Email Address</label>
+              <input type="email" id="booking-email" name="email" required>
+            </div>
+            <div class="form-group">
+              <label for="booking-date">Preferred Date</label>
+              <input type="date" id="booking-date" name="date" required>
+            </div>
+            <div class="form-group">
+              <label for="booking-type">Event Type</label>
+              <select id="booking-type" name="event-type" required>
+                <option value="">Select event type</option>
+                <option value="wedding">Wedding</option>
+                <option value="funeral">Funeral</option>
+                <option value="corporate">Corporate Event</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="booking-message">Event Details</label>
+              <textarea id="booking-message" name="message" required></textarea>
+            </div>
+            <button type="submit" class="btn-gold">Check Availability</button>
+          </form>
           
           <div class="booking-contact">
             <h3>Prefer to discuss first?</h3>
@@ -173,7 +200,6 @@
     </div>
     <div class="footer-bottom">
       <p>&copy; 2024 Dorothe Blake. All rights reserved.</p>
-      <p><a href="privacy.html">Privacy Policy</a> | <a href="terms.html">Terms of Service</a></p>
     </div>
   </footer>
 
