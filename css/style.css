@@ -893,3 +893,267 @@ footer {
     grid-template-columns: 1fr;
   }
 }
+
+
+
+/* Booking Page Specific Styles */
+.booking-page {
+  margin-top: 80px;
+}
+
+.booking-hero {
+  position: relative;
+  height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: var(--white);
+  overflow: hidden;
+}
+
+.hero-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+.hero-overlay {
+  background-color: rgba(0,0,0,0.6);
+  padding: 40px;
+  border-radius: 8px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.booking-hero h1 {
+  font-size: 3rem;
+  margin-bottom: 15px;
+}
+
+.booking-hero p {
+  font-size: 1.3rem;
+  margin-bottom: 30px;
+}
+
+/* Booking Info */
+.booking-info {
+  padding: 80px 0;
+  background: var(--white);
+}
+
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.info-card {
+  text-align: center;
+  padding: 30px;
+  border-radius: 8px;
+  background: var(--gray);
+  transition: transform 0.3s ease;
+}
+
+.info-card:hover {
+  transform: translateY(-5px);
+}
+
+.info-card i {
+  font-size: 2.5rem;
+  color: var(--gold);
+  margin-bottom: 20px;
+}
+
+.info-card h3 {
+  margin-bottom: 15px;
+}
+
+/* Pricing Section */
+.booking-pricing {
+  padding: 80px 0;
+  background: var(--gray);
+}
+
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.pricing-card {
+  background: var(--white);
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+  text-align: center;
+}
+
+.pricing-card h3 {
+  margin-bottom: 15px;
+}
+
+.price {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--gold);
+  margin-bottom: 20px;
+}
+
+.pricing-card ul {
+  list-style: none;
+  text-align: left;
+  margin-top: 20px;
+}
+
+.pricing-card li {
+  margin-bottom: 10px;
+  position: relative;
+  padding-left: 25px;
+}
+
+.pricing-card li::before {
+  content: '\f00c';
+  font-family: 'Font Awesome 6 Free';
+  font-weight: 900;
+  position: absolute;
+  left: 0;
+  color: var(--gold);
+}
+
+.pricing-note {
+  text-align: center;
+  margin-top: 30px;
+  font-style: italic;
+  color: var(--medium-gray);
+}
+
+/* Booking Form Section */
+.booking-form-section {
+  padding: 80px 0;
+  background: var(--white);
+}
+
+.booking-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  margin-top: 40px;
+}
+
+#booking-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.booking-contact {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.booking-contact .btn-outline {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  color: var(--dark-gray);
+  border-color: var(--dark-gray);
+  margin-bottom: 10px;
+}
+
+.booking-contact .btn-outline:hover {
+  background: var(--dark-gray);
+  color: var(--white);
+}
+
+.faq-link {
+  margin-top: 30px;
+}
+
+.faq-link h4 {
+  margin-bottom: 15px;
+}
+
+.faq-link a {
+  display: block;
+  margin-bottom: 10px;
+  color: var(--gold);
+}
+
+.faq-link a:hover {
+  text-decoration: underline;
+}
+
+/* FAQ Section */
+.faq-section {
+  padding: 80px 0;
+  background: var(--gray);
+}
+
+.faq-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.faq-item {
+  background: var(--white);
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+}
+
+.faq-item h3 {
+  color: var(--gold);
+  margin-bottom: 15px;
+}
+
+/* Responsive Booking Page */
+@media (max-width: 1024px) {
+  .booking-container {
+    grid-template-columns: 1fr;
+  }
+  
+  .booking-hero {
+    height: 50vh;
+  }
+}
+
+@media (max-width: 768px) {
+  .booking-hero h1 {
+    font-size: 2.5rem;
+  }
+  
+  .booking-hero p {
+    font-size: 1.1rem;
+  }
+  
+  .booking-info, 
+  .booking-pricing,
+  .booking-form-section,
+  .faq-section {
+    padding: 60px 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .booking-hero h1 {
+    font-size: 2rem;
+  }
+  
+  .info-grid,
+  .pricing-grid,
+  .faq-grid {
+    grid-template-columns: 1fr;
+  }
+}
