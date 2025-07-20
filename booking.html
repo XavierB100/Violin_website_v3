@@ -8,6 +8,14 @@
   <link rel="stylesheet" href="css/style.css">
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <style>
+    /* Temporary debug styles */
+    img:not([src]) {
+      border: 2px dashed red !important;
+      min-height: 200px;
+      background-color: #f5f5f5;
+    }
+  </style>
 </head>
 <body>
   <!-- Navigation -->
@@ -28,7 +36,11 @@
 
   <main class="booking-page">
     <header class="booking-hero">
-      <img src="assets/IMG_0109.jpeg" alt="Dorothe Blake performing" class="hero-image">
+      <img src="assets/IMG_0109.jpeg" 
+           alt="Dorothe Blake performing" 
+           class="hero-image"
+           loading="eager"
+           onerror="this.src='assets/IMG_0109.jpeg?t='+Date.now()">
       <div class="hero-overlay">
         <h1>Book Your Event</h1>
         <p>Fill out the form below to check availability and pricing</p>
@@ -179,5 +191,23 @@
   </footer>
 
   <script src="js/script.js"></script>
+  <script>
+    // Enhanced image loading for booking page
+    document.addEventListener('DOMContentLoaded', function() {
+      // Force load hero image if not loaded
+      const heroImg = document.querySelector('.booking-hero .hero-image');
+      if (heroImg && (!heroImg.complete || heroImg.naturalWidth === 0)) {
+        heroImg.src = heroImg.src.split('?')[0] + '?t=' + Date.now();
+      }
+
+      // Debugging for Calendly widget
+      if (typeof Calendly === 'undefined') {
+        console.log('Calendly widget not loaded, retrying...');
+        const calendlyScript = document.createElement('script');
+        calendlyScript.src = 'https://assets.calendly.com/assets/external/widget.js';
+        document.body.appendChild(calendlyScript);
+      }
+    });
+  </script>
 </body>
 </html>
